@@ -1,5 +1,0 @@
-# Python has primitive data types like int, float, str, bool
-# and others are yet to be revealed in the course
-print(type(123), "\n" ,type(123.45), "\n" ,type(123_456), "\n" ,type("123"))
-#We can also typecast like this:
-print("\n" + str(456) + str(954) + "\n", float("145.5") + float("34.8"))
