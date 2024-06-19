@@ -149,9 +149,11 @@ while machine_on:
     elif user_input == "report":
         print_report()
     elif user_input in MENU:
-        cash_register += transaction(user_input)
+        newcash = transaction(user_input)
+        cash_register += newcash
         resources = use_ingredients(user_input)
-        print(f"Please enjoy your {user_input} ☕.")
+        if newcash > 0:
+            print(f"Please enjoy your {user_input} ☕.")
     else:
         print("Please choose a drink!")
     # For a better user experience, I'll add a clear screen functionality
