@@ -1,0 +1,40 @@
+<!--The HTML Boilerplate is a starting HTML document that defines the strucure that
+a HTML document should follow. We can use our own boilerplate or we can just use the
+one VSCode offers by using ! and then pressing enter on a new .html file. Let me do that-->
+
+<!DOCTYPE html>
+<!--This line defines that we will be using the HTML5 version, which was introduced in 2012-->
+<html lang="en">
+<!--This is the root of the document, all the html elements will be enclosed between the start
+and the ending html tag. We use indentation to specify the depth of each element, and make it
+easier to see what is nested inside what. It makes no difference to the HTML rendering in the
+browser no matter whether we indent or not.
+In this tag, 'lang' is an attribute to the tag html which is given the value 'en' which means
+the content in this website is English. It is mostly for accessibility purposes for example for
+screen readers for blind people, they will read out the content in the language specified.-->
+    <head>
+    <!--This section contains the data that is not visible to the users but still is used to
+    setup how the content will be presented in the browser-->
+        <meta charset="UTF-8">
+        <!--The charset is a list of characters, and UTF-8 is the most popular charset which
+        supports a variety of characers including numbers, symbols, emojis.
+        We might use different charsets as per requirements, but usually UTF-8 is the best bet.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--In the course, there was also a meta tag that defined the content to be for Internet
+        Explorer, but seems like VSCode has removed it in later versions, since IE is deprecated now
+        This tag gets the device dimensions and serves the content in a suitable format for it-->
+        <title>My Website</title>
+        <!--This contains the text that is displayed on the top of the website as its name/title-->
+    </head>
+    <body>
+    <!--This is where all the contents visible to the user resides. All we learnt in Day 41 is for this-->
+        <h1>Hi, this is Boilerplate</h1>
+        <p>
+            What am I doing <br>
+            The whole crowd is booing <br>
+            I can't escape the noise <br>
+            It's drowning out my voice. 
+        </p>
+        <p>Welp, there goes an impromptu poem for this page.</p>
+    </body>
+</html>

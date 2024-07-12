@@ -1,0 +1,39 @@
+<!--In this task, we're not given a starting code, but we need to make
+our code look like the one in the course. When we render this file in the browser,
+the result will be shown, which will match the course example.
+The task was to nest list within a list item of another list, and then in the file
+the "code" should be indented so as to be understandable about what is going on-->
+
+<ul>
+    <li>A</li>
+    <li>B
+        <ol>
+            <li>B1</li>
+            <li>B2
+                <ul>
+                    <li>B2a
+                        <ul>
+                            <li>B2aa</li>
+                            <li>B2ab</li>
+                        </ul>
+                    </li>
+                    <li>B2b</li>
+                    <li>B2c</li>
+                </ul>
+            </li>
+            <li>B3
+                <ol>
+                    <li>B31</li>
+                    <li>B32</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>C</li>
+</ul>
+
+<!--A nice thing about VSCode is that it auto indents our elements
+So that we don't have to worry that we'll mess it up
+In adddition, it makes debugging easier since usually, the opening
+and closing tags should be at the same indentation level and if 
+they aren't then it may mean something is off.-->
