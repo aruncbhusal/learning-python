@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+}
+
+.meme{
+    color: white;
+    width: 50%;
+    margin: 50px 0 0 25%;
+    text-align: center;
+}
+
+.motivation-img{
+    width: 100%;
+    border: 5px solid white;
+}
+
+h1{
+    font-family: "Libre Baskerville", serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+p{
+    font-size: 1.2rem;
+}

@@ -1,0 +1,78 @@
+<!--In this lesson, we're looking a fonts and how to manage them in CSS
+font-size will let us change the size of the font with static units like px and pt
+or with relative changes like em(relative to parent) and rem(relative to root)
+
+font-weight lets us decide whether we want normal or bold
+We can set relative font weights too i.e. lighter or bolder, or use numbers 100-900
+
+font-family lets us declare a typeface we want to display the contents in. Since some
+fonts may not be available on our client computer, we need to specify a generic font
+face after we specify our desired font. If font is multiple words, we use quotation
+We can also pull some font from fonts.google.com and have them be downloaded on the
+client computer by placing the tags given in the website into our head section
+Then we can use the font and it WILL be loaded regardless of if the client has it-->
+
+<!--Our task here is to get a font from Google Fonts and make it appear on our page
+without having to download them into our computer.-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Font Family</title>
+  <style>
+    h1 {
+      font-family: "Jaro", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+    /*Copied from the google fonts page*/
+    }
+
+    #helvetica {
+      font-family: Helvetica, sans-serif;
+    }
+
+    #arial {
+      font-family: Arial, sans-serif;
+    }
+
+    #serif {
+      font-family: serif;
+    }
+
+    #sans-serif {
+      font-family: sans-serif;
+    }
+
+    #cursive {
+      font-family: cursive;
+    }
+
+    #monospace {
+      font-family: monospace;
+    }
+
+    #fantasy {
+      font-family: fantasy;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Playwrite+CZ:wght@100..400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Font Family</h1>
+  <p id="helvetica">Helvetica</p>
+  <p id="arial">Arial</p>
+  <p id="serif">Serif</p>
+  <p id="sans-serif">Sans Serif</p>
+  <p id="cursive">Cursive</p>
+  <p id="monospace">Monospace</p>
+  <p id="fantasy">Fantasy</p>
+
+</body>
+
+</html>

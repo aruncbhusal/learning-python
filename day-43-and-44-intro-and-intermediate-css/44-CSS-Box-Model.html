@@ -1,0 +1,82 @@
+<!--This lesson taught me about the Box Model and how to change it the way we like
+Each element in the HTML is in a box, for which we can specift width and height
+The width and height can either be in px or in percentages (% of the screen)
+border property has 3 values: thickness, style and color
+After setting a border, we can set a particular border like border-left to smth else
+We need to put the change after the border since CSS is implemented line by line
+
+padding property adds space between the content and the border, it can have 4 size values
+which are for top, right, bottom and left respectively
+margin property is similar to padding, but it adds space outside of the border
+Neither of these add size to the box, its size is fixed, we can see in Chrome inspector
+
+We can have an HTML element <div> which is nothing in itself, but it encloses HTML
+elements and can be used to group together elements to apply similar styles-->
+
+<!--Our task here is to fulfill the TODOs and achieve the final look-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Box Model</title>
+  <style>
+    /* Write your CSS code here */
+    div{
+      height: 200px;
+      width: 200px;
+    }
+    #cadet{
+      background-color: cadetblue;
+      padding: 20px;
+      border: 10px solid black;
+    }
+    #gold{
+      background-color: gold;
+      border: solid black;
+      border-width: 20px 10px;
+      margin: 0 260px;
+    }
+    #indianred{
+      background-color: indianred;
+      border: 10px solid black;
+      margin: 0 40px;
+    }
+    p{
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TODOs:
+1. Create 3 Boxes using the div element.
+2. Set their sizes to 200px heigh by 200px wide.
+3. Set different background colors for each of the boxes (I used cadetblue, gold and indianred).
+4. Add a paragraph <p> element into the first div and add the following words:
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at sapien porttitor urna elementum lacinia. In
+    id magna pulvinar, ultricies lorem id, vehicula elit. Aliquam eu luctus nisl, vitae pellentesque magna. Phasellus
+    dolor metus, laoreet ac convallis sit amet, efficitur sed dolor.
+5. Set the 1st div to have 20px padding all around with a black 10px border.
+6. Fix the style of the <p> element to remove all margins.
+Hint: Use the CSS inspector in Chrome.
+7. Set the 2nd div to have a 20px border on top and bottom and 10px border left and right. (See goal image)
+8. Set the 3rd div to have a 10px border 
+9. Set the margins for the divs so that each box corner touches the other. (See the goal image)
+-->
+
+  <div id="cadet">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at sapien porttitor urna elementum lacinia. In
+      id magna pulvinar, ultricies lorem id, vehicula elit. Aliquam eu luctus nisl, vitae pellentesque magna. Phasellus
+      dolor metus, laoreet ac convallis sit amet, efficitur sed dolor.
+    </p>
+  </div>
+  <div id="gold"></div>
+  <div id="indianred"></div>
+
+</body>
+
+</html>

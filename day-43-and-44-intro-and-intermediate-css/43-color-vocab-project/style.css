@@ -1,0 +1,36 @@
+/*To see if the stylesheet is correctly linked with the HTML, we can just set everything
+to have a background of red and see if anything has changed. That should let us know quickly:
+*{
+    background-color: red;
+}*/
+
+#red{
+    color:red
+}
+#blue{
+    color:blue
+}
+#orange{
+    color:orange
+}
+#green{
+    color:green
+}
+#yellow{
+    color: yellow
+}
+
+.color-title{
+    font-weight: normal;
+}
+
+/*For the image part, a link to the Mozilla devdocs was given in the index file, but
+I have worked with it tens of times before so I'll just do it without looking there*/
+
+img{
+    width: 200px;
+    height: 200px;
+}
+
+/*She hasn't yet brought up the semicolons so let's see if she does now. And she didn't.
+Maybe it's trivial knowledge then.*/
