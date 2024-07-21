@@ -45,6 +45,9 @@ time.sleep(20)
 # For the link to followers, I will need to use XPATH
 followers = driver.find_element(By.CSS_SELECTOR, 'a[href*="followers"]')
 followers.click()
+# Apparently we can use:
+# button = driver.find_element(by=By.XPATH, value="//button[contains(text(), 'Click me')]")
+# to locate stuff that may not be easily accessible with a XPATH
 
 time.sleep(5)
 # Since the follow buttons are all packaged as buttons inside the div with role dialog
