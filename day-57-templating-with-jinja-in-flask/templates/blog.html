@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    <!--In Jinja, the multiline scripts like for, if are encapsulated within curly braces
+    and percentage signs as below (Apparently even within comments will cause an error)-->
+    {% for item in posts: %}
+        <!--A task here was to only display the blog post if the id is 2-->
+        {% if item["id"] == id %}
+        <!--As a modification, we will only be loading the blog with the id passed when we
+        click the link from the homepage-->
+            <h1>{{ item["title"] }}</h1>
+            <h2>{{ item["subtitle"] }}</h2>
+        {% endif %}
+        <!--Pretty straightforward I'd say-->
+    {% endfor %}
+    <!--And we also need to close these multiline statements with commands like these
+    and these are specified by Jinja here-->
+</body>
+</html>

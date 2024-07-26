@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <h2>We can put dynamic content like this:</h2>
+    <h3>Random Number: {{ num }}</h3>
+    <!--Something we can add here is a hyperlink to the blog page, and we can do
+    that with the templating options Jinja provides us. We need to use it with the
+    name of the function which gives us the required page, we can also pass in
+    arguments from the link-->
+    <a href="{{ url_for('blog_page', id= 2) }}">Blog here</a>
+    <!--Now this will generate a link in the homepage for the blog page, and when we
+    click on it, it will pass the '3' as a route to it, so we can catch it in the function-->
+</body>
+<footer>
+    <!--The challenge here was to add a copyright section with the current year.
+    Apparently companies put it as plain text and it enrages web developers
+    see https://updateyourfooter.com/ -->
+    <p>&copy; {{ year }}, ACB Unlimited</p>
+</footer>
+</html>
