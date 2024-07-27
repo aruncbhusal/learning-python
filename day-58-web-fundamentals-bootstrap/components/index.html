@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<!--To turn our page into a dark theme page, we can simply add the data-bs-theme property to the html
+thanks to bootstrap supporting the dark theme option-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Components</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <style>
+    .feature-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 4rem;
+      height: 4rem;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: #fff;
+      border-radius: .75rem;
+  }
+  </style>
+</head>
+
+<body>
+  <!--In this lesson, we're learning about the different components that bootstrap has
+  predefined for us, like buttons, carousels, and such. And first we're working with btns
+  We can just use the button element and add in a class, there are classes that give a
+  particular color to the button. They are predefined as follows:
+  btn-primary: Blue, secondary: Grey, success: Green, danger: Red, warning: Yellow
+  info: aqua?, light: light grey, dark: dark grey-->
+  
+  <!--Our first task here was to create a button with a Green "Ok" button element-->
+  <!--   
+    <button class="btn btn-success">Ok!</button>
+  -->
+  <!--There are other components like cards, navbars, etc-->
+
+  <!--The goal Angela set out to was to replicate this demo website using only Bootstrap
+  components which we can easily find in the docs: https://appbrewery.github.io/bootstrap-components/
+  Let's start doing it ourself, rather than just watching her do it.-->
+
+  <!--First off the navbar, we can easily copy paste the first example code from Bootstrap docs:-->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <!--To add a logo in the homepage, we use an img tag inside this anchor-->
+        <img src="./box-seam.svg" height="30px" alt="Move It logo">
+        <!--Since it is a svg, we can scale it as we want without losing quality
+        Looks like the svg came from Bootstrap icons, which we can find on the website
+        and can download it for our use royalty free. Quite the handy tool.-->
+        Move It</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <!-- 
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+          -->
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Postcode" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Check</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!--We can notice that when opening the preview in mobile form, it shows a hamburger menu by collapsing
+  most of the columns, but we can't interact with it. That is because dropdown menus require scripting,
+  as they are a part of the website's behavior. So we need to import the bootstrap script and paste it
+  right before the end of the body tag in our file.-->
+  <!--Okay now the navbar looks as I'd expect it to, let's continue the lecture for now-->
+
+  <!--So it looks like we're using an example from the bootstrap webpage called "heroes" to set up the content
+  We can simply inspect and copy all the elements of our relevance and paste them here:
+  The style we used was the "Centred Screenshot"-->
+  <div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold">Move With Joy</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Welcome to our website, where we are on a mission to provide exceptional moving services 
+        to customers in the US. As a startup, we believe that moving doesn't have to be stressful or complicated, 
+        and we are passionate about making the process as seamless and enjoyable as possible.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Get a Quote</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Contact Us</button>
+      </div>
+    </div>
+    <div class="overflow-hidden" style="max-height: 30vh;">
+      <div class="container px-5">
+        <img src="./moving-van.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+      </div>
+    </div>
+  </div>
+  <!--Now after setting up the site with all elements from the website text guidelines from the course,
+  the second portion of the site is complete as well.-->
+
+
+  <!--Next we're using another example bootstrap from the "features" example, the first one at that-->
+  <div class="container px-4 py-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">Why Move With Us?</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <div class="feature-icon bg-primary bg-gradient">
+          <img src="./briefcase.svg" height="30px" alt="Briefcase">
+        </div>
+        <!--Notice that these icons don't look the square way they should, it is because the bootstrap
+        styling hasn't specified any of this, and we can see this by inspecting on the icons in the example
+        page as well, they come from features.css that is specific to that page, which wasn't copied here
+        So we need to copy the styling they applied there so that the buttons appear like that.
+        Next, we replace all the svgs inside the feature icons to the svg files we have downloaded-->
+        <h2>Professional</h2>
+        <p>Our team of professional movers are trained to prioritize efficiency, organization, and attention to detail. We understand that your possessions are more 
+          than just objects - they are a reflection of your life, memories, and experiences. That's why we take extra care to ensure that everything is packed and 
+          transported with the utmost care and attention.</p>
+        <a href="#" class="icon-link">
+          Get a quote
+          <img src="./chevron-right.svg">
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon bg-primary bg-gradient">
+          <img src="./bus-front.svg" height="30px" alt="Countrywide">
+        </div>
+        <h2>Countrywide</h2>
+        <p>We offer a range of services to suit your individual needs, whether you're moving locally or across the country. Our team can handle everything from 
+          packing and loading to unloading and unpacking, so you can focus on settling into your new home. And with our transparent pricing and no hidden fees, 
+          you can trust that you're getting a fair and competitive rate for our services.</p>
+        <a href="#" class="icon-link">
+          Get a quote
+          <img src="./chevron-right.svg">
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon bg-primary bg-gradient">
+          <img src="./chat-square-heart.svg" height="30px" alt="Love">
+        </div>
+        <h2>Personal Touch</h2>
+        <p>At our core, we believe that moving should be an exciting and positive experience, not a stressful one. By providing exceptional moving services 
+          in the US, we hope to revolutionize the way people think about moving and provide a better, more personalized experience for our customers. 
+          Contact us today to learn more about how we can help you with your next move.</p>
+        <a href="#" class="icon-link">
+          Get a quote
+          <img src="./chevron-right.svg">
+          <!--We have two options to use these svgs, we can either download and use them like this, or we can
+          get the svg element as a tag and copy it from the bootstrap page.-->
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Now another task here is to add a carousel of three images so that it matches the look and the layout
+  that is in the final product. We need to use a layout method to align the container with the rest of
+  the content. As always, we're using an example from the carousel docs page-->
+  <div class="container">
+  <!--Well, just using this div with a container class to encapsulate the example code worked perfectly!-->
+  <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./family.jpg" class="d-block w-100" alt="Family moving">
+      </div>
+      <div class="carousel-item">
+        <img src="./dog.jpg" class="d-block w-100" alt="Dog in a box">
+      </div>
+      <div class="carousel-item">
+        <img src="./couple.jpg" class="d-block w-100" alt="A couple">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+<!--Finally for the footer section, we just copy paste an example code-->
+<div class="container">
+<footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+  <div class="col mb-3">
+    <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+    </a>
+    <p class="text-body-secondary">© 2024</p>
+  </div>
+
+  <div class="col mb-3">
+
+  </div>
+
+  <div class="col mb-3">
+    <h5>Section</h5>
+    <ul class="nav flex-column">
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+    </ul>
+  </div>
+
+  <div class="col mb-3">
+    <h5>Section</h5>
+    <ul class="nav flex-column">
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+    </ul>
+  </div>
+
+  <div class="col mb-3">
+    <h5>Section</h5>
+    <ul class="nav flex-column">
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+    </ul>
+  </div>
+</footer>
+</div>
+<!--Something we can see in the footer is that the list elements have some classes like mb-2
+These are for defining spacing. The notation is: {property}{position}-{spacing}
+property can be m for margin and p for padding, position is t b l r and x y, should be understood
+The spacing is usually from 1 to 5 and an "auto"-->
+<!--We can use templates to use layouts that other people on the internet have created, or use templates
+by either buying them or digging through the free ones.-->
+</html>
