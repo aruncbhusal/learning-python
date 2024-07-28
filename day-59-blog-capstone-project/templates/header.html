@@ -1,0 +1,49 @@
+<!--Took the head element from the index.html and put it here
+So that I can just include it in the index file. That way I don't need
+to add the same code to every page to display the head-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Clean Blog - Start Bootstrap Theme</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{ url_for('static', filename= 'css/styles.css') }}" rel="stylesheet" />
+    <!--In order to set a dynamic URL for the css, we'll use Jinja from the docs-->
+    <!--The static above is an endpoint pre specified by Flask which we can use-->
+</head>
+
+<!--Apparently we also need to place the navigation part of the index file here.
+I wonder why we're placing only a piece of the body tag with its starting only here
+Is that because we want the navbar to be there in each page? Could be the case-->
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="{{ url_for('homepage') }}">ACBLOG</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('homepage') }}">Home</a></li>
+                    <!--Fixed the href that would go to index.html to link to the homepage wherever it is in the server-->
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('about_page') }}">About</a></li>
+                    <!--There used to be a nav item called Sample Post here-->
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ url_for('contact_page') }}">Contact</a></li>
+                    <!--Now the nav items for About and Contact are dynamically linked to this page
+                    I was confused because using the static endpoint wasn't working and forgot that we could create our own
+                    endpoints for HTML items by creating a route in the server and having the url for that function name.-->
+                </ul>
+            </div>
+        </div>
+    </nav>

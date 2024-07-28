@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!--Removed the head sectino and added the header file as an include-->
+    {% include "header.html" %}
+
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{ post.image_url }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>{{ post.title }}</h1>
+                            <h2 class="subheading">{{ post.subtitle }}</h2>
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">{{ post.author }}</a>
+                                on {{ post.date }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        {{ post.body }}
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!--Okay this was the final part of today's lessons. Now we have a fully functional website
+        with links pointing to posts correctly as well.-->
+
+        <!--Removed the section for footer and linked with the footer.html file-->
+        {% include "footer.html" %}
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

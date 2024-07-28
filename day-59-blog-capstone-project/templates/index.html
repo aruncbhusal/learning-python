@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {% include "header.html" %}
+    <!--The global header can be used by just importing this in each site
+    Jinja also offers options to "ignore missing" to not raise an exception and just load the site
+    even if the file doesn't exist. But that is beyond the scope of this use case for now
+    We can also give a list of templates to include at once with a list notation.-->
+
+        <!-- Page Header-->
+        <header class="masthead" style='background-image: url("../static/assets/img/home-bg.jpg")'>
+            <!--Now the home-bg.jpg is a picture I downloaded from Unsplash instead of the default-->
+            <!--I wanted to add the picture dynamically too but since both ' and " were used already
+            I had to settle for static linking of the file.-->
+            <!--After asking ChatGPT I changed the quotation for the style attribute to '' and it works
+            well sort of, it tells me there's an error but it does exactly what was expected-->
+            <!--I can't stand it, I'll just use the static reference,-->
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>The ACB Blog</h1>
+                            <span class="subheading">The Joy of Reading Begins Here</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+
+                    {% for post in all_posts: %}
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href="{{ url_for('post', post_id= post.id) }}">
+                            <h2 class="post-title">{{ post.title }}</h2>
+                            <!--From the Jinja docs, I found out that we can simply use the attributes
+                            of the elements like classes and dictionaries like above instead of having
+                            to use the key notation as post['title']-->
+                            <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">{{ post.author }}</a>
+                            on {{ post.date }}
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!--There were lots of post previews but since we're getting the data from an API
+                    we'll loop through the data instead, so I removed everything else but kept the pager
+                    because if we have too many posts, we'll need to add an "Older Posts" page too-->
+                    {% endfor %}
+
+                    <!-- Pager-->
+                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                </div>
+            </div>
+        </div>
+        
+        {% include "footer.html" %}
+        <!--By creating a template footer file, we can just simply use it in other pages without having
+        to rewrite the footer, and have the same footer in each site by just including them this way.-->
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for('static', filename= 'js/scripts.js') }}"></script>
+        <!--Now the JS file is dynamically linked to this file as well-->
+    </body>
+</html>
