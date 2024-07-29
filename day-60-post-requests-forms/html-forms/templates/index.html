@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Helloooooo</h1>
+    <!--The task here is to create a form with two inputs, name and password
+    We haven't been taught how to do it, but it's a challenge so let's do it
+    using the knowledge I already have about HTML-->
+    <form action="{{ url_for('receive_data') }}" method="post">
+        <!--The form action is specified as a URL where the information is to be forwarded to
+        Now let's create a route in the server to accept this data
+        But we can set the action to be dynamic instead of just the static login route, so
+        we call the function using url_for instead-->
+        <label>Name </label>
+        <input type="text" name="username" placeholder="name">
+        <!--The id and for are used to identify which labels are for which input, and also
+        to identify each input from one another, anyways I'll drop id and for, and instead
+        have a name attribute since that will be the variable name for the post request-->
+        <label>Password </label>
+        <input type="text" name="password" placeholder="password">
+        <button name="submit">Submit</button>
+        <!--We could also set this to an input type=submit instead of using a button-->
+    </form>
+    <!--Okay this should be fine for now
+    On second thought, let me wrap the text around the label tag, since they're defined
+    as labels in the course instructions
+    In the next step: https://www.w3schools.com/tags/att_form_method.asp
+    I had to wrap everything inside a form tag, instead of the current div tag
+    Then make a post request, but I'll follow the way it is in the w3schools docs-->
+</body>
+</html>
