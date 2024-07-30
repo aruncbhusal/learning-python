@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Restaurants{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid px-5">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <h1>All Cafes</h1>
+
+	  <table class="table table-hover">
+      <!--The table had a class called striped-table but in the course results
+      it didn't have a striped view, so I removed it
+      Also the background color of jumbotron was different from the one given by
+      table-dark, so I'll set the background of all td/th to #333 as inline css-->
+          <!-- This is where you will write the code to render a Bootstrap 
+          Table that contains all the information from the 
+          cafe-data.csv file. -->
+          <!--Here we need to use the render_table function from bootstrap-flask
+          https://bootstrap-flask.readthedocs.io/en/stable/macros/#render-table-->
+          <!--The cafes data is sent from the server as a list of rows
+          I was mistaken in thinking we were supposed to use render_table
+          It appears we're just supposed to use a bootstrap table format
+          But since a loop cannot have both th and td inside it, I'll use td for all-->
+          {% for cafe in cafes: %}
+          <tr>
+            {% for data in cafe: %}
+            <!--The link should be a link rather than just plain text-->
+            {% if data[:4] == "http": %}
+              <td style="background-color:#333">
+                <a href="{{ data }}">Maps Link</a>
+              </td>
+            {% else: %}
+              <td style="background-color:#333; color:white;">{{ data }}</td>
+            {% endif %}
+            {% endfor %}
+          </tr>
+          {% endfor %}
+          
+  	  </table>
+
+      <p><a href="{{ url_for('home') }}">Return to index page</a></p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

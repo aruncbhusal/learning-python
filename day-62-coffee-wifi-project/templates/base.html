@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    {% block styles %}
+    <!-- (First Requirement: ) Load Bootstrap-Flask CSS here -->
+    {{ bootstrap.load_css() }}
+    <!-- (First Requirement:) Link to the styles.css here to apply styling to all the child templates.-->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    <!--This wasn't loading at all and I was wondering what had gone wrong, then I noticed I was using
+    url_for without using the Jinja expression encapsulation-->
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+  </body>
+</html>

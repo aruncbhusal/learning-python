@@ -1,0 +1,27 @@
+<!--Similar to success.html, our challenge here is to modify this page so that
+the template specified in base.html is used by just specifying the blocks to use-->
+
+{% extends "base.html" %}
+
+{% block title %}Access Denied{% endblock %}
+
+<!--Now to add to the styling that was already specified in the base html-->
+<!--  block styling 
+	 super() 
+	h1{
+		color: red;
+	}
+	If we don't have the above statement, it will erase everything in the parent styling
+	block and add its own content only, but by adding this, we make sure we add upon it.
+	And apparently, having a comment between the super and the rest of the block to be added
+	will make the rest of the lines to be ignored. Maybe because comments in HTML not Jinja
+endblock  -->
+
+
+{% block content %}
+	<div class="container">
+		<h1>Access Denied </h1>
+		<iframe src="https://giphy.com/embed/1xeVd1vr43nHO" width="480" height="271" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+		<p><a href="https://giphy.com/gifs/cheezburger-funny-dog-fails-1xeVd1vr43nHO">via GIPHY</a></p>
+	</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+<!--Finally getting this one work as per the base template too -->
+{% extends "base.html" %}
+{% from "bootstrap5/form.html" import render_form %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<h1>Login</h1>
+		{{ render_form(form) }}
+		<!--Instead of writing all the stuff below, we did it in just a single
+		line of code, how cool is that??
+		Also, it gives the form in a nice Bootstrap styling. But we still needed
+		to know how the forms work on the inside, rather than using render_form
+		blindly since it is a blackbox and there might be things that need changes.-->
+
+
+		<!-- This is where our form will go. -->
+		<!-- <form action="{{ url_for('login') }}" method="POST" novalidate>
+		After creating the form, we need to now set the route for request
+		Let's also format the login page so that it looks more like login
+		Also turned off browser validation because else it wouldn't let our
+		validation methods work
+		 form.csrf_token 
+		<p>
+			 form.email.label  <br>  form.email(size = 30) 
+			Now for the error detection mechanism
+			 for err in form.email.errors: 
+			<span style="color:red"> err </span>
+			 endfor 
+		</p>
+		<p>
+			 form.password.label  <br>  form.password(size = 30) 
+			 for err in form.password.errors: 
+			<span style="color:red">{{ err }}</span>
+			 endfor 
+		</p>
+		This one is just for the login button
+		''<input type="submit" value="Log In">''
+		 form.submit 
+		</form> -->
+	</div>
+{% endblock %}

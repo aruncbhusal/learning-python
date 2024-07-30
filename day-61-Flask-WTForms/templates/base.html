@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!--We can also have super blocks while inheriting templates so that
+    the contents of the block to be inherited from can be added to our
+    content as well, and we can add to it if we need to
+    By just using this, we can change the styling of all related sites
+    from one place.-->
+    
+    {% block styling %}
+    {{ bootstrap.load_css() }}
+    <!--Since we just want to load the CSS, I'll leave the JS be for now
+    I had all this code within the style tag before, finally changed it-->
+    {% endblock %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+    <!--By creating a base page and adding in blocks, we can use these base files
+    to inherit in any other html file, so that we need not write the same code again
+    and again for two pages with just different content but must have the same layout-->
+</body>
+</html>
