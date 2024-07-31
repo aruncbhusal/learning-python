@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add Book</title>
+  </head>
+  <body>
+    <!--The second challenge is to have a form that can send data to add
+    The form was already there, I just needed to add the address.
+    Next we need to get the data that we pass from here into the empty list
+    as a dictionary-->
+    <form action="{{ url_for('add') }}" method="POST" novalidate>
+      <label>Book Name</label>
+      <input name="title" type="text" />
+      <label>Book Author</label>
+      <input name="author" type="text" />
+      <label>Rating</label>
+      <input name="rating" type="text" />
+      <button type="submit">Add Book</button>
+    </form>
+  </body>
+</html>
