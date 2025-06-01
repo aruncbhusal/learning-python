@@ -1,0 +1,88 @@
+After a long hiatus here I am with more learning
+The main thing today is to learn what makes websites look good and feel good to the end user.
+- The first impression matters very much, the first 3 seconds decide whether the user wants to stay on your website or not.
+
+We learn about design principles today
+
+1. Color Theory:
+- Make sure the message you're trying to convey is carried by the colors you use
+
+- The most predominant color in your design dictates the mood of the site itself
+- Red: energetic, Yellow: joy,attention, but not good for long term viewing
+- Green: fresh, healthy, used for food, Blue: trustworthy, professional
+- Purple: royalty, wealth, femininity
+
+- We need to think of how to combine colors, using scientific theories
+- Analogous Colors: Two colos right next to each other on the color wheel: harmonious, makes things look coherent, but the design will not stand out
+- Complementary/Clashing Colors: Two colors opposite to each other on the color wheel: Draw attention, don't use it with text and its background, good for logos/icons
+- Triadic color palette: Draw an equilateral triangle on the color wheel.
+- There are many other methods of combining colors, which can be experimented in color.adobe.com
+- colorhunt.co can be used to find tried and tested palettes for our websites
+
+
+2. Typography:
+- Fonts matter because they set the mood for the content/message they are used to convey
+- There are two main family of fonts: Serif and Sans-Serif
+- Serif typeface has protrusions at the base of the characters, as it was inspired from marble engravings of the past
+- Using a serif typeface can make the design look more serious, authoritative and older
+- Serif can be further divided into old style, transitional, modern, slab serif, etc.
+- Older serif fonts have less difference in width between thickest and thinnest parts of a character, but modern ones have it accentuated.
+- Sans-serif has the characer bases end at right angles, not possible with stone engravings.
+- Sans-serif typefaces look more friendly/approachable and novel/contemporary
+- It can also be divided into Grotesque, Neo-grotesque, Humanist, Geometric, etc.
+- Body texts are mostly written in sans-serif to make them more legible and readable
+- By making our body more readable, we increase the information understood per unit time, in turn boosting sales, and efficiency
+
+- To make legible, look for: Open shapes, intercharacter spacing, unambiguity in character forms, varying proportions of characters
+- In one design, it is recommended to limit our design to two fonts, with similar moods, and time era
+- We can put serif in title and sans-serif in body, for example, to create interest
+
+
+3. User Interface Design:
+
+Hierarchy:
+- Not all information is equally important, so by weighing the information by their importance, we can create a hierarchy and use different font faces, sizes, weights, to convey the hierarchy
+- There are many ways to establish hierarchy in design:
+a. Color: Contrast color with the background, and make the more important parts more appealing and more likely to be read first. For eg: Add to cart button on a shopping site
+b. Size: Convey your main intent in larger fonts, and larger components, eg. email input box for a magazine subscription
+
+Layout:
+- We should also take care of layout in our design along with hierarchy
+- Putting too many characters in a line makes it harder to keep track of which line we're on. On the other hand, too little characters and it becomes awkward to keep changing lines
+- So we should aim at an optimum of 40-60 characters per line, depending on the use case
+- By ensuring our layout divides content into components and arranges them neatly, we can direct attention to the important parts, and convey more information than words alone can.
+
+Alignment:
+- The title and body may be aligned differently, making the text awkward to read, it is importatnt to create harmony in the alignment of text/content
+- We can make a design simpler by just reducing the nummber of alignment points (the starting point for characters in a block of text, or a component)
+- By adding white spaces between/around components, we create a feel of luxury/minimalism in our design
+
+Audience:
+- Your design should reflect your brand, and the people you are trying to cater
+- Using comical fonts may be appropriate depending on your target demographic, for example
+- Don't have the same style each time, become more flexible depending on who you want to see your design
+
+
+User Experience Design:
+- It is the invisible part of the website, which says how the user actually wants to use the website, rather than what the User Interface tries to enforce.
+- It can be used as a powerful tool to find out what really matters in our design, what should be changed to make the user feel more valued, and increase the site's utility.
+
+1. Simplicity: Cluttering with information is not good for user. A user can only focus on so much at a time and we must account for that in our design.
+
+2. Consistency: Keep the design consistent, along with the functionality. For example, having different nav bars for different pages of the website means the user needs to look for their desired functionality instead of being effortless.
+
+3. Reading patterns: People's eyes usually follow a F pattern so we can maximize usability by using the F-pattern in our design to ensure the most important bits are advertised well.
+Another pattern is the Z-pattern where eyes go from left to right then back to bottom left to bottom right.
+
+4. All Platform Design: Your website is not viewed only on one type of screen, so mobile phones, tablets and desktops must all be accomodated and the usability must be catered for each type of audience.
+
+5. Don't use human psychology maliciously: Dark patterns, those that exploit human mind to make them do what they did not visit the site to do. It is used to trick people into clicking on more expensive offerings, or a "hair on the screen" trick.
+
+
+Today's task is to design a UI as can be found in dailyui.co
+For it we will create a new design in canva.com with 1400x800 resolution
+The website will be divided into three pages, which we will design here
+
+In the course we're tasked to make a website for a hotel so we'll stick to that
+First we'll make the title page, with contrast between typefaces to establish an aesthetic, and a consistent color scheme, then similarly a page for services, and one for contact info.
+The results will be in this same folder
