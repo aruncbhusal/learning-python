@@ -1,0 +1,46 @@
+- After the first two steps, we have achieved the first level of security for our file
+- In this, we store our file in the server, and can only access it with a password
+- But this password is stored in plaintext, so if someone gets our database, everything is open, no user is safe
+
+- The next level of security includes encryption, where we use a key and an encryption method
+- The end result is a cipherkey, which unless you know the key and encryption method, is secure
+- But it is increasingly easy to crack an encrypted password these days
+- Some popular examples of encryption were the Caesar cipher (text shift substitution), and the Enigma Machine
+- We can see the different encryption methods and their results in a site called cryptii.com
+- The Enigma machine produced a different substitution for even the same letter, so Germans thought it couldn't be cracked
+- It had five rotors, three used at one time, one would move each time, the other when the first would complete one rotation, same with third
+- Each time it rotated, the circuitry connecting a bulb and the battery changed, causing different letters to light up
+- The machine was first set to a state at first, two digits for each rotor(max 26 for each), and that setting was shared via radio/morse code
+- According to ChatGPT the term is involution/self-inverse cipher where enigma of an enigma is the original text
+- The millitary even had an extra layer of scrambling, by using plugboards to swap letters with each other, max 10 pairs
+- The total number of possible combinations would become 158 quintillion, the setting for each day was written on a paper
+
+- Breaking the Enigma Code: The flaw in Enigma machine was that it never gave out the same letter as was given as input
+- Alan Turing made a machine to break the code in under 20 minutes. Since the letters would be scrambled in order plugboard->rotor->plugboard
+- We could assume a plugboard connection, then deduce another using rotor output and received code
+- if a contradiction was detected, it would mean our initial guess was wrong, so change to one of other 24 to pair original one with
+- If all are wrong, the rotor position is wrong so we change that, until cracked, but it was slow
+- But Turing being clever made a modification, once we find a mistake, all the combinations discovered using that mistake would also be wrong
+- Also he used electric circuits to speed up the process to make many things instantaneous in his Bombe machine, it used process of elimination
+
+- The next level of security comes from eliminating the need for a key, and using a hash function instead
+- A hash function is just something that is simple to convert a message to hash, but almost impossible to do reverse
+- An example is multiplying two prime numbers and trying to get back the multiplying factors 
+(though this one is RSA Encryption, but it is what she used as an example)
+- We generate a hash using the function and store the hash, then when user tries to log in, we hash it again
+- If this hash is the same as the hash for that user in the database, the password is correct and user is authenticated
+
+How do hackers find your password?
+- When they get access to a database, the company may have stored the passwords with simple encryptions, or worse, in plaintext
+In such cases, the hackers readily have your password, as it is easy to decode simple encryptions and no matter how much encrypted, it is possible to get back original password
+- If the passwords are hashed, they use hash tables to compare with the hashes of popular passwords
+- The most popular hashing method is the MD5 hash. Hackers create billions of combinations of hashes and compare with our passwords' hashes
+- The methods used are dictionary words, telephone numbers, date of birth, etc
+- The best way to make password strong is to make it longer, we can make it more secure by adding more letters than by adding special characters
+
+One more level of security: Hashing + Salting
+- Two people with the same password would have the same hash stored in the database, making it easier to guess, but we can also store a separate unique random string called a "salt" along with the hash
+- The salt is appended to the password and the hash is generated from the full string
+- But even with salting, modern GPUs can crunch MD5 hashes really fast and can generate hashes for the entire dictionary with the salt to guess passwords
+- So our solution is to use bcrypt, an industry standard hashing algorithm which takes a longer time to generate hashes
+- Plus, we can add salting rounds, where we append the hash produced with the same salt, then pass it through a hashing step again, repeating for a fixed number of steps, doubling processing power needed for each hash
