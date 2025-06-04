@@ -1,0 +1,44 @@
+{% from "bootstrap5/form.html" import render_form %} {% block content %} {%
+include "header.html" %}
+
+<!-- Page Header -->
+<header
+    class="masthead"
+    style="background-image: url('../static/assets/img/register-bg.jpg')"
+>
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="page-heading">
+                    <h1>Register</h1>
+                    <span class="subheading"
+                        >Start Contributing to the Blog!</span
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="mb-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <!--Let's also add a flash message section for the register success/failure-->
+                <!-- I want to style the message differently for different category so I looked at docs-->
+                <!-- {% with messages = get_flashed_messages(with_categories = True)
+                %} {% if messages %} {% for category, message in messages %}
+                <p class="alert alert-{{category}}">{{ message }}</p>
+                {% endfor %} {% endif %} {% endwith %} -->
+                <!--Apparently we were to redirect user to homepage logging them directly when registered
+                So the alert would only be valid for the error part and not the success part-->
+                <!--There appears to be no need to display this message here since we're redirecting the user
+                to the login page in case the email already exists, so this process appears to be wasted here-->
+                <!--TODO: render your registration form here-->
+                {{ render_form(form) }}
+            </div>
+        </div>
+    </div>
+</main>
+
+{% include "footer.html" %} {% endblock %}
