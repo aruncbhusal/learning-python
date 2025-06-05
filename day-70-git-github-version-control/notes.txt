@@ -1,0 +1,141 @@
+- Not much coding in today's lesson as it is mostly about Version Control with Git and Github
+- We can install Git in windows by going to https://gitforwindows.org and installing Git SCM
+- Windows doesn't come with Bash pre installed so we must include bash along with our install
+- Then we can open up a terminal in our IDE (VSCode for me), and select bash there.
+
+- Using version control we can set savepoints for our codebase, so that when we screw up, we can get back to a working version
+- We can also compare with the past version to see what we have changed, and find out any unexpected changes
+
+- Now there's a demonstration to show how we can create a repo locally, but since I'm already inside a repo right now,
+- I will just list the things she does.
+- 1. Go to a certain directory/create a new one with cd and mkdir
+- 2. Create a new file and add some content to the file and save it
+- 3. In the same directory(current working directory), use 'git init' to initiate a git directory
+- This step adds a new .git hidden folder to the cwd, which is used to track changes and store progress
+- 4. To make changes, we need to first see what has changed so we use "git status" to see
+- If it shows stuff in red, it means changes have been made since the last version
+- 5. Before new version is created, we first need to add the files to the staging area, we do it using git add <filename>
+- Once it it added, using "git status" makes the file appear in green, meaning it is added to the staging area
+- 6. Finally we can commit the changes using 'git commit -m <Commit Message>'
+- The commit messages are important and should be explicit about what changes were made since last commit
+- I didn't know this but it is a convention to write commit messages in present tense. I've been using past all this while
+
+- 7. Now the changes are committed and we can look at commit log using 'git log'
+- 8. We can now add more files, and/or change content of the file already there
+- 9. After that, when we use 'git status' we get untracked files/changes so we need to add again
+- 10. Adding each file one by one is tedious so we can use 'git add .' to add all files in the current directory
+- 11. After committing again and using 'git log' we can see two commit logs with separate hashes and HEAD pointing to current state
+
+- 12. We have a staging area as an intermediary between the working directory and Git Repository so that we can see what files to track
+- We can then choose to ignore certain files so that they are not reflected in the repository
+- 13. If in case we make a mistake while editing something and have already saved the file, we might need to roll back
+- In such case we can use 'git diff <filename>' to see changes made in a file since last commit
+- If the changes can be corrected, nice. If not, we can choose to roll back to last safe version using 'git checkout <filename>'
+
+- Next up was the concept of GitHub, a place to host your Git repositories
+- After signing up/logging in, we can create a new repo, public or private and after doing that we can see options
+- By choosing command line option, in the terminal we use: 'git remote add <name:origin> <github link>
+- The remote server name is origin by convention not fixed, github link is the link to your repo in github
+- Then after our working directory is connected to the remote we can simply use 'git push -u <remote_name> <local_name>
+- The local name is usually 'main' when we're working on the main branch
+- After that command, all our files, and the entire commit history is pushed to GitHub
+
+- Next thing we need to to know is how to ignore files to be uploaded to Git
+- We might have secret keys, passwords, user settings, icon data like .DS_Store which we don't want others to see
+- We can create a '.gitignore' file inside the working directory, which is automatically hidden
+- Then inside the file, we can enter the filename for each of the files to be hidden on a new line
+- If we add all files using 'git add .' and then remember we need to ignore some as well, we can unstage them
+- By using 'git rm --cached -r .' which recursively removes all files from the staging area
+- Then after making the required adjustments, we can see that adding all files doesn't add the ones we don't want to add
+- In the gitignore file, we can use # for comments, and we can use wildcard *.<extension> to ignore all files with the extension
+- We can copy a .gitignore file from the github gitignore repository based on our project type and language
+- They have one for python and it was used in the course example, so I'll copy the course example to this folder
+- The test folder in this directory has the standarad git implementation
+- I copied the content for the .gitignore from https://github.com/github/gitignore/blob/main/Python.gitignore
+
+- Cloning: Making a copy of someone else's repo on github onto our local directory
+- We can use 'git clone <url>' to clone someone else's source code into our own cwd
+- This allows us to run the app/project they created using the documentation usually on their readme or website
+- There are tons of useful/cool GitHub repositories we might want to clone and run locally
+- Some are listed in this repository: https://github.com/awesome-selfhosted/awesome-selfhosted
+- Plus, we can build onto the project ourself, fix some bugs, prepare a new version, and contribute to the repository from our end.
+- Some beginner friendly repositories can be found in: https://github.com/MunGell/awesome-for-beginners
+
+
+- Branching: Separating development workflows
+- Our main branch is sequential and consists of the regular code progresses, but we might want to add features/fix bugs
+- In order to do so, we create new branches, because we might break things and not want it to affect our main, plus we do multiple things at a time
+- We can divice each branch to a specific feature/fixing of a specific bug so that it doesn't affect any other branches
+- We can then merge the branch with the main using 'git merge <branch-name>' and resolve any possible conflicts, to produce new main commit
+- In order to create a branch we use 'git branch <new-branch-name>' and we can use 'git branch' to see the available branches
+- The current branch is the one with the asterisk sign (*). We can change branch using 'git checkout <branch-name>'
+- When on a branch, all staging and commits will happen on that branch, which is shown in the git log as well.
+- When we switch branches, our local files change as per the branch as well. After we're done making changes and we want to add features to main,
+- We can go to the main branch and use 'git merge <branch-name>' to merge the branch with main, this doesn't delete the branch
+- We can see the changes made after pushing on the "Network" tab inside "Insights" in GitHub, where it shows the branching and merging
+
+- I'm currently using https://learngitbranching.js.org/ to test/improve my branching skills. Here's some lessons from that site:
+- Commits are lightweight and store mostly the delta from one commit to another, to avoid storing all files each time
+- We can create a new branch and switch to it directly using 'git checkout -b <branch-name>'
+- A new command 'switch' was introduced to phase out 'checkout' but it is still experimental and has more overhead
+- Normally a commit has one parent, but using 'git merge <branch-name>' we create a new commit on current branch with two parents
+- Instead of using merge, we can use 'git rebase' to take a history of commits and combine them, creating a linear commit history, not branched
+- Eg. using 'git rebase main' from a branch will add the commits from the branch on top of the current head of the main branch
+- Then we can rebase the branch from the main and then the head will point to both the main and the branch
+- During rebasing of a branch into another branch, its commits are still there, but their copies are added onto top of main
+
+- HEAD points to the most recent commit of the branch we are checked out at. Normally it points to a branch instead of a commit
+- We can detatch the head to point to a commit instead by using 'git checkout <commit-hash>'
+- Since checking out certain commits using their hashes can get tedious, we can instead use enough of its initial characters instead eg. 'db4f'
+- We can also move up and down the commit tree, which we can see using git log, using ^ for the commit above it
+- We can also use ~<num> for num number of commits above current HEAD position
+- These are called commit refs. We can use 'main^^' to move to the grandparent commit for main branch
+- We can also reference HEAD itself using relative ref, like 'HEAD^' for the parent of current HEAD commit
+- We can instead use 'HEAD~4' to move 4 parents above HEAD's current position.
+- We can also use 'git branch -f main HEAD~3' to forcefully move main back to 3 positions above the current HEAD
+- NOTE: In a real git environment, we can't use this on the current branch, like we can't use above command when we're in main
+
+- We can reverse changes in Git, and it has both low level and high level component
+- They can be done in two ways: git reset and git revert
+- git reset can make a commit go back to a certain reference and make it look like no commit exists after that
+- But using git reset is not good in remote environments where multiple people are working on the same version
+- git revert fixes this by creating a new commit that reverses all the changes made since the referenced commit
+
+- Advanced workflows: moving work around
+- We can use 'git cherry-pick <commit1> <commit2> ...' to move a series of commits below the current HEAD
+- This makes it possible to only copy some commits from one branch to another branch, like major changes
+- It can be difficult to pick commits from the available ones, so we instead use interactive rebase i.e. rebase with -i flag
+- It opens a UI, generally a text editor, that lets us pick the commits, their orders, also combining, amending or editing commits
+- git cherry-pick and rebase can be used when we're fixing bugs and adding debug statements in each commit to try hunting for the bug
+- Then in one commit we add the fix for the bug/add the feature, and we want to import only that commit into main, not the other ones
+
+- We can also work with amending a past commit by using git rebase -i to move the commit to the front, using git commit --amend
+- Finally we use git rebase -i again to get the commit back to its original position, completing the change
+- We can also use cherry-pick instead of rebase to achieve the same result, by cherry-picking the commit to amend, amending it
+- Finally we can cherry pick the final commit to add it to the new main branch
+
+- Since branches can easily me moved around, we might want something a bit more permanent to mark certain milestones
+- For it we can use 'git tag <name> <commit>' so that a commit now is marked, but we can't commit on that tag, it is just a marker
+- Git tags act as "anchors" so we might need to know where we are relative to the anchor, for that we need to use 'git describe <commit-ref>'
+- It is used when using 'git bisect' for debugging purposes. The output of the command is '<nearest-ancestor-tag>_<commits-since>_g<hash>'
+
+- I did a pretty hard challenge, where the job was to rebase a messy commit tree in a sequential fashion.
+- The solution was to stand at the main then bring in the next one in the sequence below it
+- The git command: 'git rebase -i main next' can rebase the ancestors of next until the common ancestor of main and next
+
+- When using ^ it chooses the first parent of the commit, but if we had merged, we'd have two parents
+- With mutiple parents, we can choose ^<num> to choose the <num>th parent
+- These modifiers (~ and ^) can be chained together like (HEAD^2~2) to go 3 steps above, but through the second parent
+- In next challenge I had to create a new branch at a commit in the ancestry, but I had to use 'git branch newBranch HEAD~^2~' to get the answer
+
+- I'll leave the rest of the challenges, which are on the remote git i.e. Github side for now, and I'll continue with the course instead.
+
+- Forking and Pull Requests:
+- We can create a copy of a remote repository so that we can own and modify a copy of the source code, done using "forking"
+- We only have a read-only access to someone else's remote repo. Trusted people "contributors" have write access as well, along with owner
+- We may choose to clone the forked repo (which we own), make changes and then submit a "pull request" to the original repository
+- If the owner/contributors approve of our changes, they can merge i.e. pull the changes onto the main repo as well.
+- When we make changes/commit to our copy, the change is seen as a new branch in the repository's network tab.
+- The owner can see the PR on the Pull Requests tab as an open pull request, and approve/decline/request for changes until it is closed.
+
+- This is it for today.

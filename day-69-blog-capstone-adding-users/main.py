@@ -29,7 +29,7 @@ login_manager.init_app(app)
 
 # Next we will need to have a callback to load_user function to load the user
 @login_manager.user_loader
-def laod_user(user_id):
+def load_user(user_id):
     return db.session.execute(db.select(User).where(User.id == user_id)).scalar()
 
 
@@ -125,7 +125,6 @@ def register():
             name = form.name.data,
             email = email,
             password = hashed_pw,
-            posts = []
         )
         db.session.add(new_user)
         db.session.commit()
